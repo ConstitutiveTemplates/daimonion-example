@@ -1,0 +1,81 @@
+on:
+  # workflow_call only, by design: both callers (root ci.yml and a generated
+  # project's ci.yml) gate the `release` job on `github.ref_type == 'tag'`,
+  # and the job consumes the artifacts uploaded by the `dist`/`docs` jobs of
+  # the same run -- a manual dispatch would find no artifacts and fail, so
+  # there is deliberately no workflow_dispatch here. The only execution path
+  # is pushing a release tag.
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  artifacts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # The reusable workflow's top-level block is `contents: read` (the
+    # least this file needs in general, enforced by
+    # tests/test_workflow_security.py); the token a called workflow
+    # receives is the intersection of this job's scopes and the caller's,
+    # and only this job creates the GitHub Release. `ci.yml`'s release job
+    # already passes `contents: write`, so without this block the release
+    # step sees a read-only token and fails with 403 "Resource not
+    # accessible by integration" -- which is exactly how every 6.0.0 tag
+    # push failed.
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        # Into its own directory, not the workspace root: `files: "*"` below
+        # uploads everything sitting in the workspace root as release
+        # assets, and that must stay limited to the downloaded artifacts.
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: _checkout
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Download artifacts
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          merge-multiple: true
+
+      - name: Zip up docs
+        run: |
+          set -vxeuo pipefail
+          # docs/_docs.yml uploads the built site: Sphinx as build/html
+          # contents (so the artifact holds an `html/` dir), zensical/mkdocs
+          # as the `site/` dir. Rename whichever exists so the release zip is
+          # named after the tag either way.
+          if [ -d html ]; then
+            mv html "$GITHUB_REF_NAME"
+          elif [ -d site ]; then
+            mv site "$GITHUB_REF_NAME"
+          else
+            echo "No docs output found (html/ or site/)" >&2
+            exit 1
+          fi
+          zip -r docs.zip "$GITHUB_REF_NAME"
+          rm -rf "$GITHUB_REF_NAME"
+
+      - name: Generate release notes with git-cliff
+        # Only this tag's conventional-commit history, categorised by type.
+        uses: orhun/git-cliff-action@f50e11560dce63f7c33227798f90b924471a88b5 # v4.8.0
+        with:
+          config: _checkout/cliff.toml
+          args: --repository _checkout --latest --strip all -o CHANGES.md
+
+      - name: Create GitHub Release
+        # We pin to the SHA, not the tag, for security reasons.
+        # https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#using-third-party-actions
+        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
+        with:
+          prerelease: ${{ contains(github.ref_name, 'a') || contains(github.ref_name, 'b') || contains(github.ref_name, 'rc') }}
+          files: |
+            *
+            !_checkout
+          body_path: CHANGES.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

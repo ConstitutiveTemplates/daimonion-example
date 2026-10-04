@@ -1,0 +1,75 @@
+on:
+  workflow_call:
+    inputs:
+      task_runner:
+        type: string
+        description: Which task runner drives the tasks (task, just, poe, make, invoke, duty, pixi)
+        required: true
+      task:
+        type: string
+        description: Task name(s) to run, comma or space separated
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: "ubuntu-latest"
+    timeout-minutes: 15
+
+    steps:
+      # The checkout stays here, not in the composite: a local action's files
+      # must exist before it can be invoked, so the composite cannot fetch the
+      # repository it lives in (see setup-runner's description).
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          # Need this to get version number from last tag
+          fetch-depth: 0
+
+      - name: Set up the runner
+        uses: ./.github/actions/setup-runner
+        with:
+          task_runner: ${{ inputs.task_runner }}
+      - name: Install MicroPython stubs
+        if: hashFiles('requirements-dev.txt') != '' && hashFiles('pixi.lock', 'poetry.lock') == ''
+        run: uv run --locked pip install -r requirements-dev.txt --target typings
+
+      - name: Run tasks
+        env:
+          TASK_RUNNER: ${{ inputs.task_runner }}
+          TASKS: ${{ inputs.task }}
+        run: |
+          set -eu
+          for t in $(echo "$TASKS" | tr ',' ' '); do
+            case "$TASK_RUNNER" in
+              task) task "$t" ;;
+              just) just "$t" ;;
+              make) make "$t" ;;
+              poe)
+                if [ -f poetry.lock ]; then
+                  poetry run poe "$t"
+                else
+                  uv run --locked poe "$t"
+                fi
+                ;;
+              invoke)
+                if [ -f poetry.lock ]; then
+                  poetry run invoke "$t"
+                else
+                  uv run --locked invoke "$t"
+                fi
+                ;;
+              duty)
+                if [ -f poetry.lock ]; then
+                  poetry run duty "$t"
+                else
+                  uv run --locked duty "$t"
+                fi
+                ;;
+              pixi) pixi run -e dev --locked "$t" ;;
+              *) echo "Unknown task runner: $TASK_RUNNER" >&2; exit 1 ;;
+            esac
+          done

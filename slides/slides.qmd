@@ -1,0 +1,36 @@
+---
+title: "python-copier-template-example"
+subtitle: "A subtitle"
+# clean-revealjs is the vendored extension in _extensions/clean/ (the
+# "clean" revealjs theme by Grant McDermott, MIT —
+# github.com/grantmcdermott/quarto-revealjs-clean), so this renders with
+# no `quarto add` step.
+format:
+  clean-revealjs:
+    embed-resources: true
+    incremental: true
+    slide-number: false
+    output-file: "python-copier-template-example_slides.html"
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: "kashi-x"
+    orcid: ""
+    affiliations:
+      - name: "ConstitutiveTemplates"
+date: today
+execute:
+  echo: true
+jupyter: python3
+---
+
+# First slide
+
+- A bullet point
+- Another bullet point
+
+```{python}
+# A code cell
+print("Hello")
+```

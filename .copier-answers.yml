@@ -1,0 +1,59 @@
+# Changes here will be overwritten by Copier
+_commit: 6.1.0-46-g81a16d59
+_src_path: https://github.com/ConstitutiveTemplates/foundry.git
+allow_japanese: true
+author_email: kashimiya.exe@gmail.com
+author_name: kashi-x
+author_orcid: ''
+ci_provider: github_actions
+cicd_extras: true
+cloud_provider: none
+data_ethics: false
+data_reusable: false
+dependencies:
+- structlog
+- duckdb
+- pyarrow
+- polars>=0.20.15
+description: An expanded https://github.com/ConstitutiveTemplates/foundry to illustrate
+    how it looks with all the options enabled.
+distribution:
+- in-house
+distribution_name: kasi-x-python-copier-template-example
+docker: true
+docs_type: zensical
+domain_traits: []
+existing_project: false
+fair: true
+git_platform: github.com
+github_org: ConstitutiveTemplates
+include_sentry: false
+include_web_api: false
+license: Apache-2.0
+license_check: true
+log_library: structlog
+oj_code: false
+package_manager: uv
+package_name: python_copier_template_example
+project_type: data_science
+pypi: true
+repo_name: python-copier-template-example
+scorecard: false
+security_policy: true
+src_dirs:
+- data
+- features
+- models
+- visualization
+strictness: recommended
+task_runner: task
+type_checker: pyrefly
+use_gpu: true
+use_recommended_data_science: false
+use_recommended_docs: false
+use_recommended_integrations: false
+use_recommended_license: false
+use_recommended_polish: false
+use_recommended_quality: false
+use_recommended_security: false
+use_recommended_toolchain: false

@@ -1,0 +1,29 @@
+on:
+  # workflow_call only, by design: the caller (a generated project's ci.yml
+  # `pypi` job) gates this on a tag push, and the job downloads the `dist`
+  # artifact from its own run -- a manual dispatch would find no artifacts
+  # and fail, so there is deliberately no workflow_dispatch here. First real
+  # execution additionally needs the `release` environment to exist and PyPI
+  # trusted publishing (OIDC) configured for the repository.
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: release
+
+    steps:
+      - name: Download dist artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          name: dist
+          path: dist
+
+      - name: Publish to PyPI using trusted publishing
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          attestations: false
