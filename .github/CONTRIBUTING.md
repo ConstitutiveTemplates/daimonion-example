@@ -1,7 +1,7 @@
 # Contribute to the project
 
 Contributions and issues are most welcome! All issues and pull requests are
-handled through [GitHub](https://github.com/ConstitutiveTemplates/python-copier-template-example/issues). Also, please check for any existing issues before
+handled through [GitHub](https://github.com/ConstitutiveTemplates/daimonion-example/issues). Also, please check for any existing issues before
 filing a new one. If you have a great idea but it involves big changes, please
 file a ticket before making a pull request! We want to make sure you don't spend
 your time coding something that might not fit the scope of the project.
@@ -9,11 +9,11 @@ your time coding something that might not fit the scope of the project.
 ## Security
 
 Please do not open a public issue for security vulnerabilities. Report them
-privately via the [Security Advisory workflow](https://github.com/ConstitutiveTemplates/python-copier-template-example/security/advisories/new) — see [SECURITY.md](../SECURITY.md) for details.
+privately via the [Security Advisory workflow](https://github.com/ConstitutiveTemplates/daimonion-example/security/advisories/new) — see [SECURITY.md](../SECURITY.md) for details.
 
 ## Issue or Discussion?
 
-Github also offers [discussions](https://github.com/ConstitutiveTemplates/python-copier-template-example/discussions) as a place to ask questions and share ideas. If
+Github also offers [discussions](https://github.com/ConstitutiveTemplates/daimonion-example/discussions) as a place to ask questions and share ideas. If
 your issue is open ended and it is not obvious when it can be "closed", please
 raise it as a discussion instead.
 
@@ -54,6 +54,6 @@ same or is improved by a pull request!
   build; keep all of them green.
 
 This project was created using the
-[foundry](https://github.com/ConstitutiveTemplates/foundry) for
+[daimonion](https://github.com/ConstitutiveTemplates/daimonion) for
 Python projects. Its documentation lives at
-<https://constitutivetemplates.github.io/foundry/>.
+<https://constitutivetemplates.github.io/daimonion/>.

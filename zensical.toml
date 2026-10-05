@@ -1,14 +1,14 @@
 [project]
-site_url = "https://constitutivetemplates.github.io/python-copier-template-example"
-site_name = "python-copier-template-example"
-site_description = "An expanded https://github.com/ConstitutiveTemplates/foundry to illustrate how it looks with all the options enabled."
+site_url = "https://constitutivetemplates.github.io/daimonion-example"
+site_name = "daimonion-example"
+site_description = "An expanded https://github.com/ConstitutiveTemplates/daimonion to illustrate how it looks with all the options enabled."
 site_author = "kashi-x"
 
-repo_url = "https://github.com/ConstitutiveTemplates/python-copier-template-example"
-repo_name = "ConstitutiveTemplates/python-copier-template-example"
+repo_url = "https://github.com/ConstitutiveTemplates/daimonion-example"
+repo_name = "ConstitutiveTemplates/daimonion-example"
 edit_uri = "edit/main/docs/"
 
-copyright = 'Maintained by <a href="https://github.com/ConstitutiveTemplates/python-copier-template-example">kashi-x</a>.'
+copyright = 'Maintained by <a href="https://github.com/ConstitutiveTemplates/daimonion-example">kashi-x</a>.'
 
 nav = [
   { "Home" = "index.md" },

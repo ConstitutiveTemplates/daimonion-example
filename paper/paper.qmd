@@ -1,5 +1,5 @@
 ---
-title: "python-copier-template-example"
+title: "daimonion-example"
 format:
   arxiv-pdf:
     keep-tex: true

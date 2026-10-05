@@ -75,7 +75,7 @@ jobs:
     with:
       # The exact check for the installed wheel: <pkg> ships a `--version`
       # CLI; web_api's app/ has no CLI entry point, so import it instead.
-      version-command: python -m python_copier_template_example --version
+      version-command: python -m daimonion_example --version
   
   pypi:
     needs: [dist, test]

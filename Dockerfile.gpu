@@ -1,7 +1,7 @@
 # GPU-enabled developer container (nvidia-docker / CUDA).
 # Build and run with:
-#   docker build --target developer -f Dockerfile.gpu -t python-copier-template-example:gpu .
-#   docker run --gpus all -it python-copier-template-example:gpu
+#   docker build --target developer -f Dockerfile.gpu -t daimonion-example:gpu .
+#   docker run --gpus all -it daimonion-example:gpu
 FROM nvidia/cuda:12.6.3-cudnn-devel-ubuntu22.04 AS developer
 
 # Install system dependencies

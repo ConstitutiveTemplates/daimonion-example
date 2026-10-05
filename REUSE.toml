@@ -1,8 +1,8 @@
 version = 1
 
-SPDX-PackageName = "python-copier-template-example"
+SPDX-PackageName = "daimonion-example"
 SPDX-PackageSupplier = "kashi-x <kashimiya.exe@gmail.com>"
-SPDX-PackageDownloadLocation = "https://github.com/ConstitutiveTemplates/python-copier-template-example"
+SPDX-PackageDownloadLocation = "https://github.com/ConstitutiveTemplates/daimonion-example"
 
 # Project-wide default: every file inherits the project license and
 # copyright.

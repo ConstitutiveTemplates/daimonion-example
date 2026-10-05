@@ -50,5 +50,5 @@ USER appuser
 
 
 # change this entrypoint if it is not the same as the repo
-ENTRYPOINT ["python-copier-template-example"]
+ENTRYPOINT ["daimonion-example"]
 CMD ["--version"]

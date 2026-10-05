@@ -1,6 +1,6 @@
 # Changes here will be overwritten by Copier
-_commit: 6.1.0-46-g81a16d59
-_src_path: https://github.com/ConstitutiveTemplates/foundry.git
+_commit: 7.0.0-2-g936dca8
+_src_path: https://github.com/ConstitutiveTemplates/daimonion.git
 allow_japanese: true
 author_email: kashimiya.exe@gmail.com
 author_name: kashi-x
@@ -15,11 +15,11 @@ dependencies:
 - duckdb
 - pyarrow
 - polars>=0.20.15
-description: An expanded https://github.com/ConstitutiveTemplates/foundry to illustrate
+description: An expanded https://github.com/ConstitutiveTemplates/daimonion to illustrate
     how it looks with all the options enabled.
 distribution:
 - in-house
-distribution_name: kasi-x-python-copier-template-example
+distribution_name: ConstitutiveTemplates-daimonion-example
 docker: true
 docs_type: zensical
 domain_traits: []
@@ -34,10 +34,10 @@ license_check: true
 log_library: structlog
 oj_code: false
 package_manager: uv
-package_name: python_copier_template_example
+package_name: daimonion_example
 project_type: data_science
 pypi: true
-repo_name: python-copier-template-example
+repo_name: daimonion-example
 scorecard: false
 security_policy: true
 src_dirs:

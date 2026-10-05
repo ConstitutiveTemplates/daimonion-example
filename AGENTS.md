@@ -1,10 +1,10 @@
-# Agent Guide for `python-copier-template-example`
+# Agent Guide for `daimonion-example`
 
 This file is for AI coding agents working in this repository. It states how
 to run the checks and where edits belong. The human-facing contribution
 guide is [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md).
 
-> Data-science project: `src/` holds the importable package (`src/python_copier_template_example/`)
+> Data-science project: `src/` holds the importable package (`src/daimonion_example/`)
 > beside the analysis pipeline stubs (`data/`, `features/`, `models/`,
 > `visualization/`, each a `.gitkeep` stub). Promote notebook cells into
 > tested modules there; the stubs are linted like any other `src/` code,
@@ -40,7 +40,7 @@ Build the docs with `task docs`.
 
 ## Where to edit
 
-- Application/package code: `src/python_copier_template_example/`
+- Application/package code: `src/daimonion_example/`
 - Tests: `tests/`
 - Docs: `README.md` and `docs/`
 

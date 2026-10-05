@@ -3,8 +3,8 @@ build-backend = "setuptools.build_meta"
 requires = [ "setuptools>=77", "setuptools-scm[toml]>=8" ]
 
 [project]
-name = "kasi-x-python-copier-template-example"
-description = "An expanded https://github.com/ConstitutiveTemplates/foundry to illustrate how it looks with all the options enabled."
+name = "ConstitutiveTemplates-daimonion-example"
+description = "An expanded https://github.com/ConstitutiveTemplates/daimonion to illustrate how it looks with all the options enabled."
 readme = "README.md"
 license = "Apache-2.0"
 license-files = [ "LICENSE" ]
@@ -25,8 +25,8 @@ dynamic = [ "version" ]
 
 dependencies = ["structlog", "duckdb", "pyarrow", "polars>=0.20.15", ]  # Add project dependencies here, e.g. ["click", "numpy"]
 
-urls.GitHub = "https://github.com/ConstitutiveTemplates/python-copier-template-example"
-scripts.python-copier-template-example = "python_copier_template_example.__main__:main"
+urls.GitHub = "https://github.com/ConstitutiveTemplates/daimonion-example"
+scripts.daimonion-example = "daimonion_example.__main__:main"
 
 
 [dependency-groups]
@@ -65,6 +65,7 @@ experiment = [
     # pixi: `[tool.pixi.feature.experiment]` として分離。
     "httpx>=0.27,<1",
     "ipykernel",
+    "jupyterlab",
     "marimo",
     "matplotlib>=3.8",
     "nbclient",
@@ -88,7 +89,7 @@ explicit = true
 torch = { index = "pytorch-cu126" }
 torchvision = { index = "pytorch-cu126" }
 [tool.setuptools_scm]
-version_file = "src/python_copier_template_example/_version.py"
+version_file = "src/daimonion_example/_version.py"
 # Publish pipelines generate first and `git init` later: without git
 # metadata setuptools_scm aborts every uv sync, so fall back to a
 # placeholder until the first commit provides the real version.
@@ -103,7 +104,7 @@ typeCheckingMode = "recommended"
 # everything else 3.11. Without this basedpyright assumes its newest
 # supported Python and lets newer-only syntax slip through.
 pythonVersion = "3.11"
-include = ["src/python_copier_template_example", "tests"]
+include = ["src/daimonion_example", "tests"]
 # tasks.py/duties.py: invoke/duty's own decorators (@task/@duty) and Context
 # are only partially typed upstream, so an explicit `basedpyright tasks.py`
 # (outside the `include` scan above) would otherwise be noisy.
@@ -127,7 +128,7 @@ reportImplicitStringConcatenation = false # ruff の ISC 系（暗黙連結を�
 # Match requires-python / .python-version: the interpreter the project
 # actually targets (ros2 humble -> 3.10, ros2 jazzy -> 3.12, else 3.11).
 python-version = "3.11"
-project-includes = ["src/python_copier_template_example"]
+project-includes = ["src/daimonion_example"]
 project-excludes = ["venv", ".venv"]
 
 preset = "default"
@@ -140,7 +141,7 @@ addopts = """
 # https://iscinumpy.gitlab.io/post/bound-version-constraints/#watch-for-warnings
 filterwarnings = "error"
 # Doctest python code in docs, python code in src docstrings, test functions in tests
-testpaths = "src/python_copier_template_example tests"
+testpaths = "src/daimonion_example tests"
 
 
 
@@ -153,7 +154,7 @@ data_file = ".coverage"
 
 [tool.coverage.paths]
 # Tests are run from installed location, map back to the src directory
-source = ["src/python_copier_template_example", "**/site-packages/"]
+source = ["src/daimonion_example", "**/site-packages/"]
 
 [tool.coverage.report]
 show_missing = true
@@ -177,7 +178,7 @@ extend-ignore-identifiers-re = ['\b[A-Z]{3}\b', 'certifi', 'certificat', 'HashiC
 extend-exclude = ["site"]
 
 [tool.vulture]
-paths = ["src/python_copier_template_example"]
+paths = ["src/daimonion_example"]
 min_confidence = 80
 
 [tool.deptry]
@@ -190,7 +191,7 @@ min_confidence = 80
 # DEP002 の web_api 系名前は web_api（またはその派生 effective）でのみ依存に現れる
 # ので、その名前を他の構成に混入させない。残りの共有名（logging 系・rich 等）は
 # どの pkg を持つプロジェクトでも deps に現れ得るため無条件に置く。
-per_rule_ignores = "DEP002=click|httpx|pendulum|pydantic|rich|structlog|loguru|picologging|typer|duckdb|ipykernel|marimo|matplotlib|nbclient|nbstripout|openai|plotly|polars|pyarrow|seaborn|wandb,DEP003=python_copier_template_example|requests,DEP004=httpx|pytest"
+per_rule_ignores = "DEP002=click|httpx|pendulum|pydantic|rich|structlog|loguru|picologging|typer|duckdb|ipykernel|jupyterlab|marimo|matplotlib|nbclient|nbstripout|openai|plotly|polars|pyarrow|seaborn|wandb,DEP003=daimonion_example|requests,DEP004=httpx|pytest"
 # tasks.py/duties.py: root-level dev script, not project source -- deptry
 # would otherwise flag invoke/duty as DEP004 (dev-only dep imported by "source")
 exclude = ["tools", ".venv", ".pixi", ".task", "build", "dist"]
@@ -202,7 +203,7 @@ no-generate-python-version-classifiers = true
 
 
 [tool.ruff]
-src = ["src/python_copier_template_example", "tests"]
+src = ["src/daimonion_example", "tests"]
 # tools/ は MicroPython の freeze.py（端末依存スクリプト）を、.github/pages は
 # 共有の CI ヘルパーを対象外とする。firmware エントリや ament の test/ は
 # ファイルごと除外せず、per-file-ignores で必要なルールだけ無効化する。
@@ -210,7 +211,7 @@ extend-exclude = ["tools", ".github/pages", "alembic", "*.md", "**/_version.py"]
 line-length = 120
 # 挙動を変える可能性があるため、自動修正は safe-fix に限定する。
 unsafe-fixes = false
-lint.logger-objects = ["python_copier_template_example.logging_setup.get_logger"]
+lint.logger-objects = ["daimonion_example.logging_setup.get_logger"]
 
 lint.preview = true
 lint.explicit-preview-rules = true
@@ -365,7 +366,7 @@ docstring-code-format = true
 # logging_setup.py has long logging-library setup calls that format
 # differently at line-length 88 vs 120 (allow_japanese), so exclude it from
 # formatting (E501 is already ignored for it).
-exclude = ["src/python_copier_template_example/logging_setup.py"]
+exclude = ["src/daimonion_example/logging_setup.py"]
 
 
 [tool.ruff.lint.pydocstyle]
@@ -434,8 +435,20 @@ suppress-none-returning = false
     "E501",   # line-too-long  CONTEXT: test_qa.py の assert メッセージ
     "PLR0912",# too-many-branches  CONTEXT: test_qa.py の依存宣言チェックは複数分岐が自然
 ]
+# marimo ノートブック（kaggle は単数形 src/notebook/、data_science は
+# 複数形 notebooks/）。どちらも @app.cell 慣習により同じ 3 ルールを豁免する。
+"**/notebook/**/*.py" = [
+    "INP001", # implicit-namespace-package  CONTEXT: marimo notebook dir には __init__.py を置かない慣習
+    "PLC0415",# import-outside-top-level  CONTEXT: marimo の @app.cell 内 import は公式パターン
+    "N803",   # argument-name-non-lowercase  CONTEXT: marimo の cell 引数 (INPUT_DIR, pl) はセル間受け渡しの慣習
+]
+"**/notebooks/**/*.py" = [
+    "INP001", # implicit-namespace-package  CONTEXT: 同上（data_science は notebooks/）
+    "PLC0415",# import-outside-top-level  CONTEXT: 同上
+    "N803",   # argument-name-non-lowercase  CONTEXT: 同上
+]
 # logging_setup.py の長い呼び出し（structlog の ConsoleRenderer /
 # make_filtering_bound_logger、loguru の add() など）は line-length 設定により
 # ruff format が折り返しを変えるため、E501 は免除する。
 # 日本語 docstring の終端句読点（D415）とシングルトン設定の global（PLW0603）も免除。
-"src/python_copier_template_example/logging_setup.py" = ["E501", "D", "PLW0603", "I001"]
+"src/daimonion_example/logging_setup.py" = ["E501", "D", "PLW0603", "I001"]

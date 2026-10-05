@@ -1,3 +1,3 @@
 # Modules
 
-::: python_copier_template_example
+::: daimonion_example

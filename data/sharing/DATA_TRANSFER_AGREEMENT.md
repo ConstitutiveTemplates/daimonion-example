@@ -7,7 +7,7 @@
 
 ## 1. Parties
 
-- **Discloser**: kashi-x — project `python-copier-template-example`
+- **Discloser**: kashi-x — project `daimonion-example`
   (contact: kashimiya.exe@gmail.com)
 - **Recipient**: TODO organisation, contact, role
 

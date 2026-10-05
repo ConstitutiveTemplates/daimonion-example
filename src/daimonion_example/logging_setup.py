@@ -3,7 +3,7 @@
 既定は人間向けの開発表示、`LOG_FORMAT=json` で cron / systemd / 集約ログ向けの
 JSON に切り替えられる。
 
-    from python_copier_template_example.logging_setup import logger
+    from daimonion_example.logging_setup import logger
 
     logger = logger.bind(task_id="T-123")
     logger.info("job_done", chunks=3)
@@ -62,5 +62,5 @@ def get_logger(name: str | None = None) -> structlog.stdlib.BoundLogger:
     return structlog.stdlib.get_logger(name)
 
 
-# Module-level logger: `from python_copier_template_example.logging_setup import logger`
+# Module-level logger: `from daimonion_example.logging_setup import logger`
 logger = get_logger()

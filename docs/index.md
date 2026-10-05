@@ -1,6 +1,6 @@
-# python-copier-template-example
+# daimonion-example
 
-An expanded https://github.com/ConstitutiveTemplates/foundry to illustrate how it looks with all the options enabled.
+An expanded https://github.com/ConstitutiveTemplates/daimonion to illustrate how it looks with all the options enabled.
 
 This is where you should write a short paragraph that describes what your module does,
 how it does it, and why people should use it.
@@ -8,14 +8,14 @@ how it does it, and why people should use it.
 ## Installation
 
 ```console
-$ pip install kasi-x-python-copier-template-example
+$ pip install ConstitutiveTemplates-daimonion-example
 ```
 
 
 ## Usage
 
 ```python
-from python_copier_template_example import __version__
+from daimonion_example import __version__
 
-print(f"Hello python_copier_template_example {__version__}")
+print(f"Hello daimonion_example {__version__}")
 ```

@@ -1,4 +1,4 @@
--- SQL queries for the python-copier-template-example data pipeline live here.
+-- SQL queries for the daimonion-example data pipeline live here.
 -- Load them with duckdb.sql(open("data/queries/example.sql").read()).
 --
 -- The data/ boundary holds raw inputs and derived tables; keep queries that

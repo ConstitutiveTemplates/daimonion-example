@@ -1,6 +1,6 @@
 # SQL queries
 
-SQL queries for the python-copier-template-example data pipeline live here. They are meant
+SQL queries for the daimonion-example data pipeline live here. They are meant
 to be loaded from Python with DuckDB:
 
 ```python

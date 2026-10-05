@@ -1,5 +1,5 @@
 ---
-title: "python-copier-template-example"
+title: "daimonion-example"
 subtitle: "A subtitle"
 # clean-revealjs is the vendored extension in _extensions/clean/ (the
 # "clean" revealjs theme by Grant McDermott, MIT —
@@ -10,7 +10,7 @@ format:
     embed-resources: true
     incremental: true
     slide-number: false
-    output-file: "python-copier-template-example_slides.html"
+    output-file: "daimonion-example_slides.html"
 html-math-method:
   method: mathjax
   url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"

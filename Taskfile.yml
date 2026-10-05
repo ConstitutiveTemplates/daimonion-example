@@ -33,7 +33,7 @@ tasks:
 
       - "uv run --locked pyrefly check"
 
-      - "uv run --locked vulture src/python_copier_template_example --min-confidence 80"
+      - "uv run --locked vulture src/daimonion_example --min-confidence 80"
 
       - "uv run --locked deptry ."
 
@@ -61,7 +61,7 @@ tasks:
 
     cmds:
 
-      - "uv run --locked pytest --cov=src/python_copier_template_example --cov-report term --cov-report xml:cov.xml"
+      - "uv run --locked pytest --cov=src/daimonion_example --cov-report term --cov-report xml:cov.xml"
 
 
   docs:

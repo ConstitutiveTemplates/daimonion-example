@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: If you use this software, please cite it using this metadata.
-title: "python-copier-template-example"
-abstract: "An expanded https://github.com/ConstitutiveTemplates/foundry to illustrate how it looks with all the options enabled."
-repository-code: "https://github.com/ConstitutiveTemplates/python-copier-template-example"
+title: "daimonion-example"
+abstract: "An expanded https://github.com/ConstitutiveTemplates/daimonion to illustrate how it looks with all the options enabled."
+repository-code: "https://github.com/ConstitutiveTemplates/daimonion-example"
 license: "Apache-2.0"
 authors:
   - family-names: "kashi-x"
