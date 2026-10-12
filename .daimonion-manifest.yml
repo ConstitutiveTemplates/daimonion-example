@@ -8,7 +8,7 @@
 manifest_schema_version: 1
 # The template revision this project was generated from, exactly as copier
 # stamped it into .copier-answers.yml (`verify` holds the two to each other).
-template_ref: "7.0.0-39-g6787314"
+template_ref: "7.0.0-40-gda66173"
 # The answers record this manifest describes.
 answers_file: ".copier-answers.yml"
 # The rationale this render carries: the active registry sections whose gate
