@@ -1,0 +1,20 @@
+# The composition contract of this project: what generated it and which
+# rationale it carries. Machine-readable so `daimonion verify` can say what
+# was chosen and which rationale changed -- the public record, not the
+# answers themselves: answer VALUES never land here (answers live in
+# .copier-answers.yml; per-render stamps live there too). A secret answer
+# would not be redacted -- it would simply be absent, because this file never
+# carries values at all.
+manifest_schema_version: 1
+# The template revision this project was generated from, exactly as copier
+# stamped it into .copier-answers.yml (`verify` holds the two to each other).
+template_ref: "7.0.0-29-g2881a23"
+# The answers record this manifest describes.
+answers_file: ".copier-answers.yml"
+# The rationale this render carries: the active registry sections whose gate
+# held, each as id + version (titles, files and scopes stay in the generated
+# appendix -- this list is the distribution record only).
+ethics_sections:
+- {id: baseline-license-drift, version: "2026-09-21.1"}
+- {id: baseline-copyright-ai, version: "2026-09-21.2"}
+- {id: domain-ml-bias, version: "2026-09-21.3"}

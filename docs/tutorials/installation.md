@@ -9,30 +9,35 @@ typing into a terminal:
 $ python3 --version
 ```
 
-## Create a virtual environment
+## Create the environment
 
-It is recommended that you install into a “virtual environment” so this
+It is recommended that you install into an isolated environment so this
 installation will not interfere with any existing Python software:
 
+
 ```
-$ python3 -m venv /path/to/venv
-$ source /path/to/venv/bin/activate
+$ uv sync                      # create .venv and install everything (incl. dev deps)
 ```
+
 
 ## Installing the library
 
-You can now use `pip` to install the library and its dependencies:
+You can now install the library and its dependencies:
+
 
 ```
-$ python3 -m pip install ConstitutiveTemplates-daimonion-example
+$ pip install ConstitutiveTemplates-daimonion-example
 ```
+
 
 If you require a feature that is not currently released you can also install
 from github:
 
+
 ```
-$ python3 -m pip install git+https://github.com/ConstitutiveTemplates/daimonion-example.git
+$ pip install git+https://github.com/ConstitutiveTemplates/daimonion-example.git
 ```
+
 
 The library should now be installed and the commandline interface on your path.
 You can check the version that has been installed by typing:

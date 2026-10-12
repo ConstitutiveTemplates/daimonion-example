@@ -114,5 +114,6 @@ jobs:
           ')
           if [ -n "$failing" ]; then
             echo "$failing"
+            echo "Reproduce it locally via the blast-radius table in .github/CONTRIBUTING.md"
             exit 1
           fi

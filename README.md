@@ -180,6 +180,16 @@ task check          # everything above
 
 ```
 
+### First run
+
+Verify the toolchain end to end with the default quality gate:
+
+```sh
+task lint
+task test
+task check
+```
+
 
 See [AGENTS.md](AGENTS.md) for AI-agent guidance (commands, edit scope, commit rules).
 
@@ -205,6 +215,29 @@ Resolve any conflicts, run `task fix` and
 `task check`, then commit. See the template's
 [adopt/update guide](https://constitutivetemplates.github.io/daimonion/main/tutorials/adopt-existing.html)
 for the conflict-resolution workflow.
+
+
+### Weekly automatic update PRs (opt-in)
+
+GitHub Actions ships a weekly trial (`.github/workflows/template-update.yml`,
+Monday 04:00 UTC): it runs `copier update` on a `daimonion/update-<ref>`
+branch and opens a pull request summarising the diff, the
+`.copier-answers.yml` `_commit` change, and the `.daimonion-manifest.yml`
+comparison to review.
+
+To enable it, set the `TEMPLATE_UPDATE` repository variable to `1`
+(Settings > Variables > Actions). Until then every run skips with success,
+so the workflow changes nothing until you ask for it.
+
+What it does and does not do:
+
+- It never merges itself: read the diff, let the regular CI on the PR run,
+  then merge by hand if the diff is what you want.
+- A conflict keeps the branch and is reported in the PR body; the run stays
+  green, because deciding is the point, not failing.
+- Least privilege: the workflow is read-only except the one job that pushes
+  the trial branch and opens the PR (`contents: write`, `pull-requests: write`).
+
 
 
 ## 📝 How to Cite
