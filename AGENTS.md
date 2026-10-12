@@ -67,9 +67,10 @@ hygiene, LLM/MCP tool security, model-evaluation fairness), plus the
 rules your `domain_traits`
 answer selected (personal data, biometric identification, medical device
 software), and the EU Cyber Resilience Act's duties where the project is
-sold or packaged as a product. Each section opens with a scope blockquote: if its triggers do
-not apply to the code you are editing, skip that section. Sections are
-written in Japanese.
+sold or packaged as a product. Each section provides an immediate rule summary
+and regex triggers; detailed facts, case citations, and prohibited patterns are
+folded in `<details>` blocks so agents can inspect them on demand without
+cluttering context. Sections are written in Japanese.
 
 
 # ライセンス変動 — 依存の現行ライセンスを追跡し、BSL/SSPL混入を防ぐ
@@ -85,6 +86,10 @@ written in Japanese.
 > (3)フォーク移行(Terraform→OpenTofu等)は正当な後継を通す。
 > 詳細は本文。
 > Triggers: `(?i)\b(licen[cs]e|bsl|busl|sspl|rsal|elv2|copyleft|gpl|agpl|lgpl|terraform|opentofu|elasticsearch|redis|source-available)\b`.
+
+
+<details>
+<summary>詳細解説を展開（事実・判例・禁止パターン・制度変更ウォッチ）</summary>
 
 ## 事実
 
@@ -153,6 +158,8 @@ BSL適用後コードの不正利用を主張する書簡を送付し、OpenTofu
 
 <!-- 法的助言ではない。専門家レビュー必須。 / This is not legal advice; expert review required. -->
 
+</details>
+
 # AIと著作権 — 取得・学習・RAGコードは「非享受目的」を壊さない
 
 > **適用条件**: ウェブ取得(スクレイピング)、データセット構築、
@@ -165,6 +172,10 @@ BSL適用後コードの不正利用を主張する書簡を送付し、OpenTofu
 > (3)模倣を目的とする過学習・特定作品群の追加学習をしない。
 > 詳細は本文。
 > Triggers: `(?i)\b(scrap|crawl|robots\.txt|rag|retrieval|fine-?tun|dataset|embedding|public[- ]domain|copyright)\b`.
+
+
+<details>
+<summary>詳細解説を展開（事実・判例・禁止パターン・制度変更ウォッチ）</summary>
 
 ## 事実
 
@@ -242,6 +253,8 @@ if longest_common_ngram(answer, source, n=12):
 
 <!-- 法的助言ではない。専門家レビュー必須。 / This is not legal advice; expert review required. -->
 
+</details>
+
 # MLバイアス — 集団別評価・説明可能性・人間確認を評価に組み込む
 
 > **適用条件**: モデル学習・評価パイプライン、スクリーニング/判定
@@ -254,6 +267,10 @@ if longest_common_ngram(answer, source, n=12):
 > attributeのdropだけで差別を消したことにはしない(proxy対策)
 > (3)生命機会に影響する判断は人間確認を必須にする。詳細は本文。
 > Triggers: `(?i)\b(fairness|bias|demographic|subgroup|shap|xai|explainab|protected|disparate|equalized|parity)\b`.
+
+
+<details>
+<summary>詳細解説を展開（事実・判例・禁止パターン・制度変更ウォッチ）</summary>
 
 ## 事実
 
@@ -320,3 +337,5 @@ write_model_card(subgroup_metrics, intervals)  # リリース物に同梱する
   組み込む。
 
 <!-- 法的助言ではない。専門家レビュー必須。 / This is not legal advice; expert review required. -->
+
+</details>
