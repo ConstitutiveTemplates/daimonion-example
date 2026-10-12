@@ -73,7 +73,8 @@ folded in `<details>` blocks so agents can inspect them on demand without
 cluttering context.
 
 To mechanically verify changed files against these triggers before committing,
-run `uvx law-lint diff` (or `uvx law-lint check <path>`). Sections are written in Japanese.
+run `uvx --from git+https://github.com/ConstitutiveTemplates/law-lint law-lint diff`
+(or `... law-lint check <path>`). Sections are written in Japanese.
 
 
 # ライセンス変動 — 依存の現行ライセンスを追跡し、BSL/SSPL混入を防ぐ

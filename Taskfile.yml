@@ -56,6 +56,14 @@ tasks:
       - "uv run --locked pip-licenses --from=mixed --partial-match --fail-on=GPL"
 
 
+  legal-check:
+    desc: "Scan changed files against the AGENTS.md legal/ethics triggers (needs network)"
+
+    cmds:
+
+      - "uvx --from git+https://github.com/ConstitutiveTemplates/law-lint law-lint diff --strict"
+
+
   test:
     desc: "Run tests with coverage"
 
