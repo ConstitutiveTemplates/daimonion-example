@@ -424,6 +424,8 @@
 <p>.. data:: <strong>version</strong>
     :type: str</p>
 <pre><code>Version number as calculated by https://github.com/pypa/setuptools_scm
+(importlib.metadata fallback when the installer never wrote _version.py,
+e.g. a Poetry env: only a setuptools-scm build writes that file).
 </code></pre>
 
 
