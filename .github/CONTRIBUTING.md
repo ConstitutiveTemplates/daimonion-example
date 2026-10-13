@@ -30,6 +30,7 @@ task fix            # auto-fix formatting and lint
 task lint           # ruff format --check + ruff check (check-only)
 task test           # pytest
 task type-check     # type checker + static analysis
+task legal-check
 task check          # everything above
 ```
 

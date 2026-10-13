@@ -4,8 +4,16 @@
     :type: str
 
     Version number as calculated by https://github.com/pypa/setuptools_scm
+    (importlib.metadata fallback when the installer never wrote _version.py,
+    e.g. a Poetry env: only a setuptools-scm build writes that file).
 """
 
-from ._version import __version__
+__version__: str
+try:
+    from ._version import __version__
+except ImportError:  # poetry: setuptools-scm writes no _version.py there
+    from importlib.metadata import version
+
+    __version__ = version("ConstitutiveTemplates-daimonion-example")
 
 __all__ = ["__version__"]
