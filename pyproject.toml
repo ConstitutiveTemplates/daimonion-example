@@ -191,7 +191,7 @@ min_confidence = 80
 # DEP002 の web_api 系名前は web_api（またはその派生 effective）でのみ依存に現れる
 # ので、その名前を他の構成に混入させない。残りの共有名（logging 系・rich 等）は
 # どの pkg を持つプロジェクトでも deps に現れ得るため無条件に置く。
-per_rule_ignores = "DEP002=click|httpx|pendulum|pydantic|rich|structlog|loguru|picologging|typer|duckdb|ipykernel|jupyterlab|marimo|matplotlib|nbclient|nbstripout|openai|plotly|polars|pyarrow|seaborn|wandb,DEP003=daimonion_example|requests,DEP004=httpx|pytest"
+per_rule_ignores = "DEP002=httpx|pendulum|pydantic|rich|structlog|loguru|picologging|typer|duckdb|ipykernel|jupyterlab|marimo|matplotlib|nbclient|nbstripout|openai|plotly|polars|pyarrow|seaborn|wandb,DEP003=daimonion_example|requests,DEP004=httpx|pytest"
 # tasks.py/duties.py: root-level dev script, not project source -- deptry
 # would otherwise flag invoke/duty as DEP004 (dev-only dep imported by "source")
 exclude = ["tools", ".venv", ".pixi", ".task", "build", "dist"]

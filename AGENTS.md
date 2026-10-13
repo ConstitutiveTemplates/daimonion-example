@@ -51,6 +51,29 @@ Keep 100% coverage where it exists; do not lower it.
 Data, notebooks, and reports (`data/`, `notebooks/`, `models/`,
 `reports/`) are analysis artifacts — keep generated outputs out of git.
 
+
+## Production security defaults
+
+These scaffold defaults are safe for local development and must change
+before production. Details: `docs/explanations/security-defaults.md`
+(if the render ships no docs tree, read the same page in the template
+repository).
+
+- Never commit real secrets: `.env`, `.envs/`, `*.pem` stay git-ignored
+  (`.gitignore`), and `.env.example` carries only placeholder/commented
+  values. The hygiene CI rejects committed secrets.
+
+
+
+
+
+
+
+
+
+
+
+
 ## Commits and CI
 
 - Use [Conventional Commits](https://www.conventionalcommits.org/)
