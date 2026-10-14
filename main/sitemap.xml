@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://constitutivetemplates.github.io/architekton-py-example/</loc>
+        <loc>https://politeuma.github.io/architekton-py-example/</loc>
       </url>
       <url>
-        <loc>https://constitutivetemplates.github.io/architekton-py-example/how-to/run-container/</loc>
+        <loc>https://politeuma.github.io/architekton-py-example/how-to/run-container/</loc>
       </url>
       <url>
-        <loc>https://constitutivetemplates.github.io/architekton-py-example/modules/</loc>
+        <loc>https://politeuma.github.io/architekton-py-example/modules/</loc>
       </url>
       <url>
-        <loc>https://constitutivetemplates.github.io/architekton-py-example/tutorials/installation/</loc>
+        <loc>https://politeuma.github.io/architekton-py-example/tutorials/installation/</loc>
       </url>
 </urlset>
