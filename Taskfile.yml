@@ -33,7 +33,7 @@ tasks:
 
       - "uv run --locked pyrefly check"
 
-      - "uv run --locked vulture src/daimonion_example --min-confidence 80"
+      - "uv run --locked vulture src/architekton_py_example --min-confidence 80"
 
       - "uv run --locked deptry ."
 
@@ -61,7 +61,7 @@ tasks:
 
     cmds:
 
-      - "uvx --from git+https://github.com/ConstitutiveTemplates/law-lint law-lint diff --strict"
+      - "uvx --from git+https://github.com/ConstitutiveTemplates/daimonion daimonion diff --strict"
 
 
   test:
@@ -69,7 +69,7 @@ tasks:
 
     cmds:
 
-      - "uv run --locked pytest --cov=src/daimonion_example --cov-report term --cov-report xml:cov.xml"
+      - "uv run --locked pytest --cov=src/architekton_py_example --cov-report term --cov-report xml:cov.xml"
 
 
   docs:

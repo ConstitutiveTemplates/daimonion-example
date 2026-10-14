@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: If you use this software, please cite it using this metadata.
-title: "daimonion-example"
-abstract: "An expanded https://github.com/ConstitutiveTemplates/daimonion to illustrate how it looks with all the options enabled."
-repository-code: "https://github.com/ConstitutiveTemplates/daimonion-example"
+title: "architekton-py-example"
+abstract: "An expanded https://github.com/ConstitutiveTemplates/architekton-py to illustrate how it looks with all the options enabled."
+repository-code: "https://github.com/ConstitutiveTemplates/architekton-py-example"
 license: "Apache-2.0"
 authors:
   - family-names: "kashi-x"

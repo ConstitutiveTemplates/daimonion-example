@@ -1,5 +1,5 @@
 # The composition contract of this project: what generated it and which
-# rationale it carries. Machine-readable so `daimonion verify` can say what
+# rationale it carries. Machine-readable so `architekton-py verify` can say what
 # was chosen and which rationale changed -- the public record, not the
 # answers themselves: answer VALUES never land here (answers live in
 # .copier-answers.yml; per-render stamps live there too). A secret answer
@@ -8,7 +8,7 @@
 manifest_schema_version: 1
 # The template revision this project was generated from, exactly as copier
 # stamped it into .copier-answers.yml (`verify` holds the two to each other).
-template_ref: "7.0.0-76-ged559a9"
+template_ref: "7.0.0-77-g3ee0249"
 # The answers record this manifest describes.
 answers_file: ".copier-answers.yml"
 # The rationale this render carries: the active registry sections whose gate

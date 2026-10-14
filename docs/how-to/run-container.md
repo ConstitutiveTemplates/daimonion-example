@@ -1,7 +1,7 @@
 # Run in a container
 
-Pre-built containers with daimonion-example and its dependencies already
-installed are available on [Github Container Registry](https://ghcr.io/ConstitutiveTemplates/daimonion-example).
+Pre-built containers with architekton-py-example and its dependencies already
+installed are available on [Github Container Registry](https://ghcr.io/ConstitutiveTemplates/architekton-py-example).
 
 ## Starting the container
 
@@ -9,7 +9,7 @@ Pre-built images are published to the container registry on every release.
 To pull the container from github container registry and run:
 
 ```
-$ docker run ghcr.io/constitutivetemplates/daimonion-example:latest --version
+$ docker run ghcr.io/constitutivetemplates/architekton-py-example:latest --version
 ```
 
 To get a released version, use a numbered release instead of `latest`.

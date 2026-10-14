@@ -1,4 +1,4 @@
-"""Interface for ``python -m daimonion_example``."""
+"""Interface for ``python -m architekton_py_example``."""
 
 from argparse import ArgumentParser
 from collections.abc import Sequence
@@ -19,7 +19,7 @@ def main(args: Sequence[str] | None = None) -> int | None:
         version=__version__,
     )
     parsed = parser.parse_args(args)
-    logger.info("daimonion_example_invoked", args=parsed)
+    logger.info("architekton_py_example_invoked", args=parsed)
     return None
 
 

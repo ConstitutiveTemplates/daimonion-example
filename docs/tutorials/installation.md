@@ -26,7 +26,7 @@ You can now install the library and its dependencies:
 
 
 ```
-$ pip install ConstitutiveTemplates-daimonion-example
+$ pip install ConstitutiveTemplates-architekton-py-example
 ```
 
 
@@ -35,7 +35,7 @@ from github:
 
 
 ```
-$ pip install git+https://github.com/ConstitutiveTemplates/daimonion-example.git
+$ pip install git+https://github.com/ConstitutiveTemplates/architekton-py-example.git
 ```
 
 
@@ -43,5 +43,5 @@ The library should now be installed and the commandline interface on your path.
 You can check the version that has been installed by typing:
 
 ```
-$ daimonion-example --version
+$ architekton-py-example --version
 ```

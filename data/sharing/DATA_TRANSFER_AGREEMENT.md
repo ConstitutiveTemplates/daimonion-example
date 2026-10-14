@@ -7,7 +7,7 @@
 
 ## 1. Parties
 
-- **Discloser**: kashi-x — project `daimonion-example`
+- **Discloser**: kashi-x — project `architekton-py-example`
   (contact: kashimiya.exe@gmail.com)
 - **Recipient**: TODO organisation, contact, role
 

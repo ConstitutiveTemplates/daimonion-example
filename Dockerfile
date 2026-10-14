@@ -50,5 +50,5 @@ USER appuser
 
 
 # change this entrypoint if it is not the same as the repo
-ENTRYPOINT ["daimonion-example"]
+ENTRYPOINT ["architekton-py-example"]
 CMD ["--version"]

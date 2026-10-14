@@ -1,3 +1,3 @@
 # Modules
 
-::: daimonion_example
+::: architekton_py_example

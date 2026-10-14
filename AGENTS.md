@@ -1,10 +1,10 @@
-# Agent Guide for `daimonion-example`
+# Agent Guide for `architekton-py-example`
 
 This file is for AI coding agents working in this repository. It states how
 to run the checks and where edits belong. The human-facing contribution
 guide is [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md).
 
-> Data-science project: `src/` holds the importable package (`src/daimonion_example/`)
+> Data-science project: `src/` holds the importable package (`src/architekton_py_example/`)
 > beside the analysis pipeline stubs (`data/`, `features/`, `models/`,
 > `visualization/`, each a `.gitkeep` stub). Promote notebook cells into
 > tested modules there; the stubs are linted like any other `src/` code,
@@ -41,7 +41,7 @@ Build the docs with `task docs`.
 
 ## Where to edit
 
-- Application/package code: `src/daimonion_example/`
+- Application/package code: `src/architekton_py_example/`
 - Tests: `tests/`
 - Docs: `README.md` and `docs/`
 
@@ -97,8 +97,8 @@ folded in `<details>` blocks so agents can inspect them on demand without
 cluttering context.
 
 To mechanically verify changed files against these triggers before committing,
-run `uvx --from git+https://github.com/ConstitutiveTemplates/law-lint law-lint diff`
-(or `... law-lint check <path>`). Sections are written in Japanese.
+run `uvx --from git+https://github.com/ConstitutiveTemplates/daimonion daimonion diff`
+(or `... daimonion check <path>`). Sections are written in Japanese.
 
 
 # ライセンス変動 — 依存の現行ライセンスを追跡し、BSL/SSPL混入を防ぐ
