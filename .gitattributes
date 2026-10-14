@@ -1,0 +1,4 @@
+# Keep the Quarto paper and slide deck (vendored TeX/SCSS/Lua format themes)
+# out of GitHub's language statistics so the repository shows as Python.
+paper/** linguist-documentation
+slides/** linguist-documentation

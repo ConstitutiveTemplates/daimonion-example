@@ -2,7 +2,7 @@ version = 1
 
 SPDX-PackageName = "architekton-py-example"
 SPDX-PackageSupplier = "kashi-x <kashimiya.exe@gmail.com>"
-SPDX-PackageDownloadLocation = "https://github.com/ConstitutiveTemplates/architekton-py-example"
+SPDX-PackageDownloadLocation = "https://github.com/politeuma/architekton-py-example"
 
 # Project-wide default: every file inherits the project license and
 # copyright.

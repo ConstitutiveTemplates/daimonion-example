@@ -18,7 +18,7 @@ author:
   - name: "kashi-x"
     orcid: ""
     affiliations:
-      - name: "ConstitutiveTemplates"
+      - name: "politeuma"
 date: today
 execute:
   echo: true

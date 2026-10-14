@@ -26,7 +26,7 @@ You can now install the library and its dependencies:
 
 
 ```
-$ pip install ConstitutiveTemplates-architekton-py-example
+$ pip install git+https://github.com/politeuma/architekton-py-example.git
 ```
 
 
@@ -35,7 +35,7 @@ from github:
 
 
 ```
-$ pip install git+https://github.com/ConstitutiveTemplates/architekton-py-example.git
+$ pip install git+https://github.com/politeuma/architekton-py-example.git
 ```
 
 

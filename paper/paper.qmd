@@ -22,7 +22,7 @@ format:
 author:
   - name: "kashi-x"
     affiliations:
-      - name: "ConstitutiveTemplates"
+      - name: "politeuma"
     orcid: ""
 abstract: |
   Abstract goes here.

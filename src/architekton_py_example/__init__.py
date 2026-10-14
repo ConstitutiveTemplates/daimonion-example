@@ -14,6 +14,6 @@ try:
 except ImportError:  # poetry: setuptools-scm writes no _version.py there
     from importlib.metadata import version
 
-    __version__ = version("ConstitutiveTemplates-architekton-py-example")
+    __version__ = version("politeuma-architekton-py-example")
 
 __all__ = ["__version__"]

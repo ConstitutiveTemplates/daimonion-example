@@ -61,7 +61,7 @@ tasks:
 
     cmds:
 
-      - "uvx --from git+https://github.com/ConstitutiveTemplates/daimonion daimonion diff --strict"
+      - "uvx --from git+https://github.com/politeuma/daimonion daimonion diff --strict"
 
 
   test:
