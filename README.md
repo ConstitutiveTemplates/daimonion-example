@@ -12,6 +12,8 @@ regenerated whenever the template changes.*
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-black.json)](https://github.com/copier-org/copier)
 [![Documentation](https://img.shields.io/badge/docs-politeuma.github.io%2Farchitekton--py--example-8A2BE2?logo=gitbook&logoColor=white)](https://politeuma.github.io/architekton-py-example)
+[![fair-software.eu](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B%20%20%E2%97%8F%20%20%E2%97%8B-orange)](https://fair-software.eu)
+[![PyPI](https://img.shields.io/pypi/v/politeuma-architekton-py-example.svg?logo=python&logoColor=white)](https://pypi.org/project/politeuma-architekton-py-example/)
 
 </div>
 
