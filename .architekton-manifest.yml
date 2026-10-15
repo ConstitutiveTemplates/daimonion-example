@@ -8,7 +8,7 @@
 manifest_schema_version: 1
 # The template revision this project was generated from, exactly as copier
 # stamped it into .copier-answers.yml (`verify` holds the two to each other).
-template_ref: "7.0.0-127-g2e11cfa"
+template_ref: "7.0.0-129-g46052e8"
 # The answers record this manifest describes.
 answers_file: ".copier-answers.yml"
 # The guidance `when` conditions this render declares (the same list the
