@@ -1,0 +1,11 @@
+# daimonion project conditions, in the guidance `when` vocabulary
+# (law-map guidance/sections/VOCABULARY.yml).
+# `daimonion agents-md --write` renders the matching rule sections into
+version: 1
+agents_md: AGENTS.md
+when:
+  - data_science  # data_science_layout
+# Not declared — decide for your project:
+#  - jp           # operates under Japanese law
+#  - eu_market    # ships to the EU market
+#  - ai_assisted  # AI coding agents work here

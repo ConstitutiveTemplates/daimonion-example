@@ -26,7 +26,7 @@ You can now install the library and its dependencies:
 
 
 ```
-$ pip install git+https://github.com/politeuma/architekton-py-example.git
+$ pip install politeuma-architekton-py-example
 ```
 
 

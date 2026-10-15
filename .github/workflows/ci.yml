@@ -22,6 +22,24 @@ on:
   merge_group:
 
 jobs:
+  # AGENTS.md's rules marker block is filled after render by the copier
+  # post-gen task (`daimonion --lang <agents_md_language> agents-md --write`),
+  # which only warns when it cannot run (offline). Fail here until the block
+  # is filled and matches the pinned daimonion's guidance snapshot in the
+  # questionnaire's language (`--check` compares the full block, whose marker
+  # carries `lang=`, so the check must name the same language as the write).
+  ethics-block:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install uv
+        uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+      - name: AGENTS.md rules block is filled and current
+        run: uvx --from git+https://github.com/politeuma/daimonion@5ec9539fd10cb5c5bb09539261e00b7e087dbd33 daimonion --lang en agents-md --check
 
   lint:
     uses: ./.github/workflows/_tasks.yml
@@ -97,7 +115,7 @@ jobs:
 
   required-checks-passed:
     name: all required checks passed
-    needs: [hygiene, lint, test, container, docs, dist]
+    needs: [hygiene, lint, test, ethics-block, container, docs, dist]
 
     if: always()
     runs-on: ubuntu-24.04

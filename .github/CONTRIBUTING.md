@@ -29,15 +29,15 @@ The `task` task runner drives the common commands:
 task fix            # auto-fix formatting and lint
 task lint           # ruff format --check + ruff check (check-only)
 task test           # pytest
-task type-check     # type checker + static analysis
 task legal-check
+task ethics-block
 task check          # everything above
 ```
 
 Run `task fix` before committing to apply formatting and lint
 fixes, then `task check` before finishing a change. The
-repo-hygiene checks (secrets, workflow linting, YAML validity, conventional
-commit messages) run in CI, not as local hooks — the fix and check commands
+repo-hygiene checks (secrets, workflow linting, YAML validity, the
+conventional PR title) run in CI, not as local hooks — the fix and check commands
 work anywhere, including outside a git repository.
 
 ## Code Coverage
@@ -49,8 +49,9 @@ same or is improved by a pull request!
 ## Commits and CI
 
 - Use [Conventional Commits](https://www.conventionalcommits.org/)
-  (`feat:`, `fix:`, ...); the repository's hygiene CI enforces it on commit
-  messages and the PR title.
+  (`feat:`, `fix:`, ...) in the PR title — hygiene CI checks the title
+  only, and pull requests land via squash-merge, so the title is what
+  becomes history. Individual commit messages are free-form.
 - CI runs lint, type-check, and tests on every push plus a docs
   build; keep all of them green.
 

@@ -57,11 +57,11 @@ tasks:
 
 
   legal-check:
-    desc: "Scan changed files against the AGENTS.md legal/ethics triggers (needs network)"
+    desc: "Scan changed files with daimonion scan (warn-only; needs network)"
 
     cmds:
 
-      - "uvx --from git+https://github.com/politeuma/daimonion daimonion diff --strict"
+      - "uvx --from git+https://github.com/politeuma/daimonion@5ec9539fd10cb5c5bb09539261e00b7e087dbd33 daimonion scan"
 
 
   test:
@@ -126,6 +126,14 @@ tasks:
     cmds:
 
       - "uv run --locked quartodoc build --config _quarto.yml"
+
+
+  ethics-block:
+    desc: "Refresh the AGENTS.md rules block via daimonion (warns offline, never fails)"
+
+    cmds:
+
+      - "uvx --from git+https://github.com/politeuma/daimonion@5ec9539fd10cb5c5bb09539261e00b7e087dbd33 daimonion --lang en agents-md --write || echo 'WARNING: ethics block not refreshed (offline?); rerun this task once network is available' >&2"
 
 
   check:
